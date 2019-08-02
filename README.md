@@ -1,17 +1,16 @@
 # Ansible role: EPEL
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 Installs the EPEL repository for CentOS.
 
 ## Requirements
-This role runs only for CentOS 6 and 7.
+Your distribution must be a CentOS one, either 6 or 7 version.
 
 ## Example Playbook
     - hosts: servers
       become: true
       roles:
          - mehdicopter.epel
-
-## License
-MIT
 
 ## Author Information
 Mehdi MAHFOUDI aka Mehdicopter.
