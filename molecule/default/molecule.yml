@@ -7,10 +7,10 @@ lint:
   name: yamllint
 platforms:
   - name: centos6
-    image: 'mehdicopter/systemd-centos-ansible:latest'
+    image: 'mehdicopter/systemd-centos-ansible:6'
     pre_build_image: true
   - name: centos7
-    image: 'mehdicopter/systemd-centos-ansible:latest'
+    image: 'mehdicopter/systemd-centos-ansible:7'
     pre_build_image: true
 provisioner:
   name: ansible
