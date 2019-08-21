@@ -6,10 +6,10 @@ driver:
 lint:
   name: yamllint
 platforms:
-  - name: centos6
+  - name: docker-centos6
     image: 'mehdicopter/systemd-centos-ansible:6'
     pre_build_image: true
-  - name: centos7
+  - name: docker-centos7
     image: 'mehdicopter/systemd-centos-ansible:7'
     pre_build_image: true
 provisioner:
