@@ -12,9 +12,6 @@ install:
   - aws configure set aws_secret_access_key $AWS_SECRET_KEY
   - aws configure set default.region $EC2_REGION
 script:
-  - molecule --debug create --scenario-name aws
-  - molecule --debug converge --scenario-name aws
-  - molecule --debug verify --scenario-name aws
-  - molecule --debug destroy --scenario-name aws
+  - molecule test --all
 notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/
