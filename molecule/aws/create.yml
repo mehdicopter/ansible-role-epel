@@ -5,7 +5,6 @@
   gather_facts: false
   no_log: "{{ not (lookup('env', 'MOLECULE_DEBUG') | bool or molecule_yml.provisioner.log|default(false) | bool) }}"
   vars:
-    ssh_user: centos
     ssh_port: 22
 
     security_group_name: molecule
@@ -67,6 +66,7 @@
         group: "{{ security_group_name }}"
         instance_tags:
           instance: "{{ item.name }}"
+          ssh_user: "{{ item.ssh_user }}"
         wait: true
         assign_public_ip: true
         exact_count: 1
@@ -92,7 +92,7 @@
         instance_conf_dict: {
           'instance': "{{ item.instances[0].tags.instance }}",
           'address': "{{ item.instances[0].public_ip }}",
-          'user': "{{ ssh_user }}",
+          'user': "{{ item.instances[0].tags.ssh_user }}",
           'port': "{{ ssh_port }}",
           'identity_file': "{{ keypair_path }}",
           'instance_ids': "{{ item.instance_ids }}", }
